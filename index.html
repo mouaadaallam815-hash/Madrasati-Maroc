@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#176b55">
+<title>مدرستي المغرب | Madrassati Maroc</title>
+<style>
+:root{--green:#176b55;--green2:#21866b;--bg:#f4f7f5;--ink:#172b25;--muted:#63756e;--card:#fff;--line:#dce7e1;--gold:#f3c969}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.65}
+header{background:linear-gradient(135deg,#125442,#21866b);color:white;padding:24px 16px 30px}
+.wrap{max-width:1050px;margin:auto;padding:0 14px}
+.top{display:flex;align-items:center;gap:13px}
+.logo{width:54px;height:54px;border-radius:16px;background:#fff;color:var(--green);display:grid;place-items:center;font-size:29px;font-weight:bold}
+h1{font-size:clamp(23px,4vw,34px);margin:0}
+header p{margin:5px 0 0;color:#e0f4eb}
+.hero{margin-top:20px;display:grid;grid-template-columns:1.4fr 1fr;gap:16px;align-items:center}
+.heroBox{background:#ffffff16;border:1px solid #ffffff35;border-radius:18px;padding:16px}
+.heroBox strong{font-size:20px}
+.heroBox small{display:block;color:#e0f4eb;margin-top:4px}
+main{padding:20px 0 40px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:16px;margin-bottom:16px;box-shadow:0 5px 18px #173c2b08}
+h2{font-size:20px;margin:0 0 12px}
+.controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+label{display:block;font-size:13px;font-weight:bold;color:var(--muted);margin-bottom:4px}
+input,select,textarea{font:inherit;width:100%;border:1px solid #cbd9d2;border-radius:10px;background:white;padding:10px;color:var(--ink);min-height:43px}
+textarea{min-height:80px;resize:vertical}
+button,.btn{border:0;border-radius:10px;background:var(--green);color:#fff;padding:10px 14px;font:inherit;font-weight:bold;cursor:pointer;display:inline-block;text-decoration:none;text-align:center}
+button:hover,.btn:hover{background:var(--green2)}
+button.secondary{background:#e7f3ed;color:var(--green)}
+button.danger{background:#a63838}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{background:#edf6f1;border-radius:13px;padding:12px;text-align:center}
+.stat strong{display:block;color:var(--green);font-size:24px}
+.stat span{font-size:13px;color:var(--muted)}
+.resources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.resource{border:1px solid var(--line);border-radius:14px;padding:14px;background:white;display:flex;flex-direction:column;gap:8px}
+.tag{display:inline-block;background:#e7f3ed;color:var(--green);border-radius:20px;padding:3px 9px;font-size:12px;font-weight:bold;margin-left:4px}
+.resource h3{margin:0;font-size:17px}
+.resource p{margin:0;color:var(--muted);font-size:14px;white-space:pre-wrap}
+.resource .actions{margin-top:auto}
+.empty{padding:22px;text-align:center;color:var(--muted);border:1px dashed #bdcec4;border-radius:13px;grid-column:1/-1}
+.note{font-size:13px;color:var(--muted)}
+details summary{cursor:pointer;font-weight:bold;color:var(--green)}
+.adminForm{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+.adminForm .full{grid-column:1/-1}
+footer{text-align:center;padding:18px;color:var(--muted);font-size:13px}
+.hidden{display:none!important}
+@media(max-width:700px){.hero{grid-template-columns:1fr}.controls{grid-template-columns:repeat(2,minmax(0,1fr))}.resources{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:420px){.controls,.adminForm{grid-template-columns:1fr}.adminForm .full{grid-column:auto}.stats strong{font-size:20px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap">
+  <div class="top"><div class="logo" aria-hidden="true">م</div><div><h1>مدرستي المغرب</h1><p>Madrassati Maroc — موارد تعليمية للتلميذ المغربي</p></div></div>
+  <div class="hero">
+   <div class="heroBox"><strong>تعلّم، راجع، واستعد للامتحانات</strong><small>اختر المستوى والمادة ونوع المورد للعثور على ما تحتاجه.</small></div>
+   <div class="heroBox"><strong>من الابتدائي إلى الباكالوريا</strong><small>يمكنك إضافة موارد وروابط تعليمية من لوحة الإدارة التجريبية.</small></div>
+  </div>
+ </div>
+</header>
+<main class="wrap">
+ <section class="panel">
+  <h2>ابحث عن مورد دراسي</h2>
+  <div class="controls">
+   <div><label for="level">المستوى الدراسي</label><select id="level">
+    <option value="">جميع المستويات</option>
+    <option>الأول ابتدائي</option><option>الثاني ابتدائي</option><option>الثالث ابتدائي</option><option>الرابع ابتدائي</option><option>الخامس ابتدائي</option><option>السادس ابتدائي</option>
+    <option>الأولى إعدادي</option><option>الثانية إعدادي</option><option>الثالثة إعدادي</option>
+    <option>الجذع المشترك</option><option>الأولى باكالوريا</option><option>الثانية باكالوريا</option>
+   </select></div>
+   <div><label for="subject">المادة</label><select id="subject"><option value="">جميع المواد</option><option>اللغة العربية</option><option>اللغة الفرنسية</option><option>اللغة الإنجليزية</option><option>الرياضيات</option><option>علوم الحياة والأرض</option><option>الفيزياء والكيمياء</option><option>الاجتماعيات</option><option>التربية الإسلامية</option><option>الفلسفة</option><option>المعلوميات</option><option>مواد أخرى</option></select></div>
+   <div><label for="kind">نوع المورد</label><select id="kind"><option value="">كل الأنواع</option><option>ملخص</option><option>فرض</option><option>امتحان</option><option>درس</option><option>تصحيح</option><option>كتاب أو مقرر</option><option>تمارين</option></select></div>
+   <div><label for="search">كلمات البحث</label><input id="search" placeholder="مثال: الكسور، الدورة الأولى"></div>
+  </div>
+  <div class="actions"><button id="clearFilters" class="secondary" type="button">مسح البحث</button><button id="showAll" type="button">عرض الموارد</button></div>
+ </section>
+ <section class="panel">
+  <div class="stats">
+   <div class="stat"><strong id="resourceCount">0</strong><span>مورد مسجل</span></div>
+   <div class="stat"><strong>12</strong><span>مستوى دراسي</span></div>
+   <div class="stat"><strong>مجاني</strong><span>للبداية</span></div>
+  </div>
+ </section>
+ <section class="panel">
+  <h2>الموارد الدراسية</h2>
+  <p class="note">هذه النسخة نموذج أولي؛ أضف الروابط التعليمية التي تملك حق مشاركتها من لوحة الإدارة. لا توجد ملفات أو روابط تعليمية جاهزة مضافة تلقائيًا.</p>
+  <div id="resourceList" class="resources" aria-live="polite"></div>
+ </section>
+ <section class="panel">
+  <details id="adminDetails">
+   <summary>لوحة الإدارة — إضافة مورد جديد</summary>
+   <p class="note">مهم: الموارد في هذه النسخة تحفظ داخل هذا المتصفح فقط. لن تظهر تلقائيًا على أجهزة المستخدمين الآخرين؛ ذلك يحتاج قاعدة بيانات مشتركة.</p>
+   <form id="resourceForm" class="adminForm">
+    <div><label for="rTitle">عنوان المورد *</label><input id="rTitle" required maxlength="100" placeholder="مثال: ملخص الدورة الأولى"></div>
+    <div><label for="rLevel">المستوى *</label><select id="rLevel" required><option value="">اختر المستوى</option><option>الأول ابتدائي</option><option>الثاني ابتدائي</option><option>الثالث ابتدائي</option><option>الرابع ابتدائي</option><option>الخامس ابتدائي</option><option>السادس ابتدائي</option><option>الأولى إعدادي</option><option>الثانية إعدادي</option><option>الثالثة إعدادي</option><option>الجذع المشترك</option><option>الأولى باكالوريا</option><option>الثانية باكالوريا</option></select></div>
+    <div><label for="rSubject">المادة *</label><select id="rSubject" required><option value="">اختر المادة</option><option>اللغة العربية</option><option>اللغة الفرنسية</option><option>اللغة الإنجليزية</option><option>الرياضيات</option><option>علوم الحياة والأرض</option><option>الفيزياء والكيمياء</option><option>الاجتماعيات</option><option>التربية الإسلامية</option><option>الفلسفة</option><option>المعلوميات</option><option>مواد أخرى</option></select></div>
+    <div><label for="rKind">نوع المورد *</label><select id="rKind" required><option value="">اختر النوع</option><option>ملخص</option><option>فرض</option><option>امتحان</option><option>درس</option><option>تصحيح</option><option>كتاب أو مقرر</option><option>تمارين</option></select></div>
+    <div class="full"><label for="rUrl">رابط المورد (اختياري)</label><input id="rUrl" type="url" placeholder="https://..."></div>
+    <div class="full"><label for="rDescription">وصف مختصر (اختياري)</label><textarea id="rDescription" maxlength="500" placeholder="معلومات مفيدة حول المورد"></textarea></div>
+    <div class="full actions"><button type="submit">حفظ المورد</button><button type="button" class="secondary" id="exportData">تصدير نسخة احتياطية</button><button type="button" class="secondary" id="importButton">استيراد نسخة</button><input id="importFile" type="file" accept="application/json,.json" class="hidden"></div>
+   </form>
+  </details>
+ </section>
+ <footer>مدرستي المغرب © <span id="year"></span> — نسخة تجريبية قابلة للتطوير</footer>
+</main>
+<script>
+(function(){
+'use strict';
+const STORAGE_KEY='madrassati_maroc_resources_v2';
+const $=id=>document.getElementById(id);
+let resources=[];
+try { const saved=localStorage.getItem(STORAGE_KEY); resources=saved?JSON.parse(saved):[]; if(!Array.isArray(resources)) resources=[]; } catch(e){resources=[];}
+function save(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(resources));}catch(e){alert('تعذر الحفظ في المتصفح. جرّب مساحة تخزين متاحة أو صدّر نسخة احتياطية.');}}
+function safeUrl(raw){
+ if(!raw) return '';
+ try{const u=new URL(raw);return (u.protocol==='https:'||u.protocol==='http:')?u.href:'';}catch(e){return '';}
+}
+function render(){
+ const level=$('level').value,subject=$('subject').value,kind=$('kind').value,q=$('search').value.trim().toLocaleLowerCase();
+ const filtered=resources.filter(r=>(!level||r.level===level)&&(!subject||r.subject===subject)&&(!kind||r.kind===kind)&&(!q||[r.title,r.description,r.level,r.subject,r.kind].join(' ').toLocaleLowerCase().includes(q)));
+ $('resourceCount').textContent=resources.length;
+ const list=$('resourceList');list.replaceChildren();
+ if(!filtered.length){const empty=document.createElement('div');empty.className='empty';empty.textContent=resources.length?'لا توجد نتائج مطابقة. جرّب تغيير خيارات البحث.':'لا توجد موارد مضافة بعد. افتح «لوحة الإدارة» لإضافة أول مورد.';list.appendChild(empty);return;}
+ filtered.forEach(r=>{
+  const card=document.createElement('article');card.className='resource';
+  const tags=document.createElement('div');
+  [r.level,r.subject,r.kind].forEach(t=>{const span=document.createElement('span');span.className='tag';span.textContent=t;tags.appendChild(span);});
+  const title=document.createElement('h3');title.textContent=r.title;
+  const desc=document.createElement('p');desc.textContent=r.description||'لا يوجد وصف إضافي.';
+  card.append(tags,title,desc);
+  const actions=document.createElement('div');actions.className='actions';
+  const url=safeUrl(r.url);
+  if(url){const a=document.createElement('a');a.className='btn';a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='فتح المورد';actions.appendChild(a);}
+  else {const msg=document.createElement('span');msg.className='note';msg.textContent='لم يضف رابط لهذا المورد.';actions.appendChild(msg);}
+  const del=document.createElement('button');del.type='button';del.className='danger';del.textContent='حذف';del.addEventListener('click',()=>{if(confirm('هل تريد حذف هذا المورد من هذا المتصفح؟')){resources=resources.filter(x=>x.id!==r.id);save();render();}});actions.appendChild(del);
+  card.appendChild(actions);list.appendChild(card);
+ });
+}
+['level','subject','kind','search'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));
+$('clearFilters').addEventListener('click',()=>{['level','subject','kind','search'].forEach(id=>$(id).value='');render();});
+$('showAll').addEventListener('click',render);
+$('resourceForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const title=$('rTitle').value.trim(),level=$('rLevel').value,subject=$('rSubject').value,kind=$('rKind').value,rawUrl=$('rUrl').value.trim();
+ if(!title||!level||!subject||!kind){alert('يرجى ملء الحقول الإلزامية.');return;}
+ if(rawUrl&&!safeUrl(rawUrl)){alert('الرابط غير صالح. استخدم رابطًا يبدأ بـ https:// أو http://');return;}
+ resources.unshift({id:Date.now().toString(36)+Math.random().toString(36).slice(2,7),title,level,subject,kind,url:safeUrl(rawUrl),description:$('rDescription').value.trim()});
+ save();e.target.reset();render();alert('تمت إضافة المورد على هذا الجهاز.');
+});
+$('exportData').addEventListener('click',()=>{
+ const blob=new Blob([JSON.stringify(resources,null,2)],{type:'application/json'});
+ const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='madrassati-resources-backup.json';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+});
+$('importButton').addEventListener('click',()=>$('importFile').click());
+$('importFile').addEventListener('change',async e=>{
+ const file=e.target.files&&e.target.files[0];if(!file)return;
+ try{const parsed=JSON.parse(await file.text());if(!Array.isArray(parsed))throw new Error('bad');const cleaned=parsed.filter(r=>r&&r.title&&r.level&&r.subject&&r.kind).map(r=>({id:String(r.id||Date.now()+Math.random()),title:String(r.title).slice(0,100),level:String(r.level),subject:String(r.subject),kind:String(r.kind),url:safeUrl(String(r.url||'')),description:String(r.description||'').slice(0,500)}));if(!confirm('سيتم استبدال الموارد الموجودة بالنسخة المستوردة ('+cleaned.length+' مورد). متابعة؟'))return;resources=cleaned;save();render();alert('تم الاستيراد.');}catch(err){alert('تعذر قراءة الملف. اختر نسخة JSON صادرة من التطبيق.');}finally{e.target.value='';}
+});
+$('year').textContent=new Date().getFullYear();
+render();
+})();
+</script>
+</body>
+</html>
